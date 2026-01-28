@@ -3,420 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Gavidia Donayre - Senior Full Stack Developer</title>
+    <title>Alex Gavidia Donayre - Senior AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
+        :root {
+            --primary: #0f172a;
+            --accent: #0ea5e9;
+            --accent-dark: #0284c7;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --bg-subtle: #f8fafc;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
+
+        @page {
+            size: letter;
+            margin: 0;
         }
-        
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.45;
+            color: var(--text);
+            background: white;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
         .container {
-            max-width: 1000px;
+            max-width: 8.5in;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        
+
         /* Header */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 50px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(45deg);
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        h1 {
-            font-size: 2.8em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-        
-        .subtitle {
-            font-size: 1.3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            opacity: 0.95;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.95em;
-        }
-        
-        .contact-info span {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-info a {
+            gap: 28px;
+            padding: 28px 36px;
+            background: var(--primary);
             color: white;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
         }
-        
-        .contact-info a:hover {
-            border-bottom-color: white;
+
+        .photo-container {
+            flex-shrink: 0;
         }
-        
-        /* Main Content */
-        .content {
-            padding: 50px;
+
+        .photo {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.25);
         }
-        
-        /* Sections */
-        .section {
-            margin-bottom: 45px;
+
+        .header-content {
+            flex: 1;
         }
-        
-        h2 {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
-            position: relative;
+
+        .name {
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
         }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: #667eea;
-        }
-        
-        /* Professional Summary */
-        .summary {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #495057;
-        }
-        
-        /* Core Competencies */
-        .competencies {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .competency-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .competency-item h3 {
-            color: #495057;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-        
-        /* Technical Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-        
-        .skill-category {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-        }
-        
-        .skill-category h3 {
-            color: #495057;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+
+        .title {
+            font-size: 12pt;
             font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
-        
-        .skill-years {
-            color: #6c757d;
-            font-size: 0.9em;
-        }
-        
-        .skill-bar {
-            background: #e9ecef;
-            height: 8px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            height: 100%;
-            border-radius: 4px;
-            transition: width 1s ease;
-        }
-        
-        /* Tags */
-        .tags {
+
+        .contact-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 14px;
+            font-size: 9pt;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 6px;
         }
-        
-        .tag {
-            background: #e9ecef;
-            color: #495057;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 500;
+
+        .contact-row:last-child {
+            margin-bottom: 0;
         }
-        
-        .tag.primary {
-            background: #667eea;
-            color: white;
+
+        .contact-row a {
+            color: inherit;
+            text-decoration: none;
         }
-        
-        /* Experience */
-        .experience-item {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 35px;
-            padding-bottom: 35px;
-            border-bottom: 1px solid #e9ecef;
+
+        /* Main Content */
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 0;
         }
-        
-        .experience-item:last-child {
-            border-bottom: none;
+
+        .content-left {
+            padding: 20px 28px 20px 36px;
+            border-right: 1px solid var(--border);
         }
-        
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
+
+        .content-right {
+            padding: 20px 36px 20px 20px;
+            background: var(--bg-subtle);
         }
-        
-        .experience-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 20px;
-            width: 2px;
-            height: calc(100% - 20px);
-            background: #e9ecef;
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 16px;
         }
-        
-        .experience-item:last-child::after {
-            display: none;
+
+        .section:last-child {
+            margin-bottom: 0;
         }
-        
-        .job-header {
-            margin-bottom: 15px;
-        }
-        
-        .job-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #343a40;
-            margin-bottom: 5px;
-        }
-        
-        .company {
-            font-size: 1.1em;
-            color: #667eea;
-            font-weight: 500;
-        }
-        
-        .job-meta {
-            color: #6c757d;
-            font-size: 0.95em;
-            margin-top: 5px;
-        }
-        
-        .job-description {
-            margin-top: 15px;
-        }
-        
-        .job-description ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .job-description li {
-            position: relative;
-            padding-left: 25px;
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
             margin-bottom: 10px;
-            line-height: 1.7;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--accent);
         }
-        
-        .job-description li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
+
+        /* Summary */
+        .summary {
+            font-size: 9.5pt;
+            line-height: 1.55;
+            color: var(--text);
         }
-        
-        /* Education & Others */
-        .education-grid {
+
+        /* AI Stack */
+        .ai-stack {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 8px;
+            margin-top: 6px;
         }
-        
-        .education-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+
+        .ai-stack-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 8px 6px;
             text-align: center;
         }
-        
-        .education-item .year {
+
+        .ai-stack-item .label {
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .ai-stack-item .value {
+            font-size: 8.5pt;
             font-weight: 600;
-            color: #667eea;
+            color: var(--primary);
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job.compact {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 10pt;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .job-date {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .job-company {
+            font-size: 9pt;
+            color: var(--accent-dark);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .job-highlights {
+            list-style: none;
+        }
+
+        .job-highlights li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 3px;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+
+        .job-highlights li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 8pt;
+        }
+
+        .job-tech {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 7.5pt;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* Right Column */
+        .skill-group {
+            margin-bottom: 12px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-label {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 5px;
         }
-        
-        .education-item .degree {
-            color: #495057;
-            margin-bottom: 5px;
-        }
-        
-        .education-item .institution {
-            font-weight: 600;
-            color: #343a40;
-        }
-        
-        /* Languages & Hobbies */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        
-        .hobby-list {
+
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 4px;
         }
-        
-        .hobby-item {
-            background: #f8f9fa;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 500;
-            color: #495057;
+
+        .skill-tag {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 8pt;
+            color: var(--text);
         }
-        
-        /* Soft Skills */
-        .soft-skills {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            line-height: 1.8;
+
+        .skill-tag.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
         }
-        
-        /* Print Styles */
+
+        /* Education & Languages */
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            font-size: 8.5pt;
+            color: var(--text-light);
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            margin-bottom: 3px;
+        }
+
+        /* Print Optimization */
         @media print {
             body {
-                font-size: 11pt;
+                font-size: 9pt;
             }
-            
+
             .container {
                 box-shadow: none;
             }
-            
+
             .header {
-                background: #667eea !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                padding: 40px 30px;
+                background: var(--primary) !important;
             }
-            
-            .content {
-                padding: 30px;
+
+            .content-right {
+                background: var(--bg-subtle) !important;
             }
-            
-            .section {
-                margin-bottom: 30px;
+
+            .ai-stack-item, .skill-tag {
+                background: white !important;
             }
-            
-            .experience-item {
-                page-break-inside: avoid;
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header {
-                padding: 40px 30px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .content {
-                padding: 30px;
-            }
-            
-            .skills-grid,
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .education-grid {
-                grid-template-columns: 1fr;
+
+            .skill-tag.primary {
+                background: var(--accent) !important;
             }
         }
     </style>
@@ -425,470 +344,295 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
+            <div class="photo-container">
+                <img src="https://raw.githubusercontent.com/agavidiad/resume/main/assets/profile.png" alt="Alex Gavidia" class="photo">
+            </div>
             <div class="header-content">
-                <h1>ALEX GAVIDIA DONAYRE</h1>
-                <div class="subtitle">Senior Full Stack Developer & Project Leader</div>
-                <div class="contact-info">
-                    <span>📍 Miraflores, Peru</span>
-                    <span>📱 +51 912 447 806</span>
-                    <span>✉️ <a href="mailto:agavidiad@gmail.com">agavidiad@gmail.com</a></span>
-                    <span>🔗 <a href="https://www.linkedin.com/in/alexgavidia/" target="_blank">linkedin.com/in/alexgavidia</a></span>
+                <h1 class="name">ALEX GAVIDIA DONAYRE</h1>
+                <div class="title">Senior AI Engineer · Applied LLMs & Automation</div>
+                <div class="contact-row">
+                    <span>Lima, Peru (Remote US-Ready)</span>
+                </div>
+                <div class="contact-row">
+                    <span><a href="mailto:agavidiad@gmail.com">agavidiad@gmail.com</a></span>
+                    <span><a href="https://linkedin.com/in/alexgavidia">linkedin.com/in/alexgavidia</a></span>
+                    <span><a href="https://github.com/agavidiad">github.com/agavidiad</a></span>
+                    <span>+51 912 447 806</span>
                 </div>
             </div>
         </header>
-        
+
         <!-- Main Content -->
-        <main class="content">
-            <!-- Professional Summary -->
-            <section class="section">
-                <h2>Professional Summary</h2>
-                <div class="summary">
-                    Dynamic Senior Full Stack Developer and Project Leader with over 14 years of enterprise software development experience and 6 years leading high-performance teams. Early career programmer who began developing at age 13, evolved into a technical leader specializing in modern development stacks (MEAN, MERN) and cloud technologies. Proven track record of delivering complex projects that drive business growth and technical innovation. Known for combining technical expertise with strong leadership and communication skills to deliver solutions that exceed client expectations.
-                </div>
-            </section>
-            
-            <!-- Core Competencies -->
-            <section class="section">
-                <h2>Core Competencies</h2>
-                <div class="competencies">
-                    <div class="competency-item">
-                        <h3>Architecture & Development</h3>
-                        <p>Full Stack Development, Cloud Architecture, Microservices, Serverless Computing</p>
-                    </div>
-                    <div class="competency-item">
-                        <h3>Technical Leadership</h3>
-                        <p>Agile Project Management, Team Leadership, Code Review, Technical Mentoring</p>
-                    </div>
-                    <div class="competency-item">
-                        <h3>Business Impact</h3>
-                        <p>Solution Architecture, Strategic Planning, Client Relations, Process Optimization</p>
-                    </div>
-                    <div class="competency-item">
-                        <h3>AI & Generative Tools</h3>
-                        <p>ChatGPT, Claude AI, Claude Code, DeepSeek, GitHub Copilot, AI-Assisted Development, Prompt Engineering</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Technical Skills -->
-            <section class="section">
-                <h2>Technical Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Development Stacks</h3>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>MEAN Stack (MongoDB, Express.js, Angular, Node.js)</span>
-                                <span class="skill-years">7 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 87.5%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>.NET Core / C# Enterprise Development</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Cloud & DevOps</h3>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>AWS (Lambda, DynamoDB, EC2, S3)</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>CI/CD, Git, DevOps Practices</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Containerization & Orchestration</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Frontend Technologies</h3>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Angular (4 > 19)</span>
-                                <span class="skill-years">7 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 87.5%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>React.js</span>
-                                <span class="skill-years">1 year</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 20%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>TypeScript, JavaScript (ES6+)</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>PWA, HTML5, CSS3, Bootstrap</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Angular Material, Responsive Design</span>
-                                <span class="skill-years">7 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 87.5%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Backend & Databases</h3>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Node.js, Express.js, NEST.js</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>.NET Core, C#, Entity Framework</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>SQL Server, MongoDB, Oracle, PostgreSQL</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>RESTful APIs, Microservices</span>
-                                <span class="skill-years">12 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Payment & Integration</h3>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Stripe, CULQI, NIUBIZ, MercadoPago</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>CRM Integration (Bitrix24, Hubspot)</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Social Media APIs, Facebook Pixel</span>
-                                <span class="skill-years">4 years</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 67%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tags">
-                    <span class="tag primary">Full Stack Developer</span>
-                    <span class="tag primary">.NET Developer</span>
-                    <span class="tag primary">MEAN</span>
-                    <span class="tag primary">MERN</span>
-                    <span class="tag primary">AWS</span>
-                    <span class="tag primary">AI Tools</span>
-                    <span class="tag">Angular</span>
-                    <span class="tag">React</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">C#</span>
-                    <span class="tag">DevOps</span>
-                    <span class="tag">Microservices</span>
-                    <span class="tag">Serverless</span>
-                    <span class="tag">Git</span>
-                    <span class="tag">ChatGPT</span>
-                    <span class="tag">Claude AI</span>
-                    <span class="tag">Claude Code</span>
-                    <span class="tag">DeepSeek</span>
-                    <span class="tag">GitHub Copilot</span>
-                    <span class="tag">Stripe</span>
-                    <span class="tag">CULQI</span>
-                    <span class="tag">Niubiz</span>
-                    <span class="tag">MercadoPago</span>
-                </div>
-            </section>
-            
-            <!-- Soft Skills -->
-            <section class="section">
-                <h2>Soft Skills</h2>
-                <div class="soft-skills">
-                    Proficient in initiating and maintaining professional communications, problem-solving, collaborative teamwork, and project management. Strong emphasis on empathy, respect, and clear instruction-following. Experienced in cross-functional team leadership and adaptable to diverse work environments.
-                </div>
-            </section>
-            
-            <!-- Professional Experience -->
-            <section class="section">
-                <h2>Work Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Leader - Senior Fullstack Developer</h3>
-                        <div class="company">EUCIM BUSINESS SCHOOL</div>
-                        <div class="job-meta">Lince, Peru | 2024 - Present</div>
-                    </div>
-                    <div class="job-description">
-                        <p> <strong>Digital Transformation & Modern Development Initiatives </strong></p>
-						<ul>
-							<li> Architected and deployed high-converting landing pages using Angular 20 and modern design principles, achieving 40% improvement in user engagement metrics.</li>
-							<li> Integrated Niubiz payment gateway with advanced fraud detection, processing over $500K in secure transactions monthly.</li>
-							<li> Pioneered AI-assisted development workflows using Claude Code, reducing development time by 35% while maintaining code quality standards.</li>
-							<li> Implemented real-time collaboration features using WebSockets and Node.js, enhancing team productivity by 45%</li>
-						</ul>
-						
-						<p> <strong>Cloud Infrastructure & DevOps Excellence </strong></p>
-						<ul>
-							<li> Designed and deployed serverless microservices architecture on AWS Lambda, handling 50K+ daily requests with 99.9% uptime.</li>
-							<li> Configured and optimized VPS and EC2 instances for high-availability applications, reducing infrastructure costs by 30%.</li>
-							<li> Established CI/CD pipelines with automated testing and deployment, decreasing release cycle from 2 weeks to 2 days.</li>
-							<li> Implemented S3-based content delivery system with CloudFront, improving global content load times by 60%.</li>
-						</ul>
-						
-						<p> <strong>Agile Leadership & Team Development </strong></p>
-						<ul>
-							<li> Led cross-functional team of 5 developers using Scrum methodology, consistently delivering sprints on time.</li>
-							<li> Mentored junior developers in modern development practices and AI-assisted coding techniques.</li>
-							<li> Established code review processes and best practices, reducing production bugs by 70%.</li>
-						</ul>
-						
-						<p style="margin-top: 15px;"><strong>Technologies:</strong> Node.js, Express, Angular 20, DynamoDB, Microsoft SQL Server, AWS Lambda, S3, EC2, CI/CD, Niubiz, MercadoPago, Claude Code, Scrum, Docker, CloudFormation.</p>
-						
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Senior Developer</h3>
-                        <div class="company">TRANSCORE INC.</div>
-                        <div class="job-meta">United States | 2022 - 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <p><strong>Project: MDTA Integrity Toll System</strong></p>
-                        <ul>
-                            <li>Led the development and implementation of a high-integrity toll system, ensuring accuracy and efficiency in transaction processing.</li>
-                            <li>Implemented scalable architecture using .NET and SQL Server, achieving a 40% improvement in system performance.</li>
-                            <li>Designed and implemented RESTful APIs following security and performance best practices.</li>
-                            <li>Established Git workflows and CI/CD practices that reduced deployment time by 60%.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Leader - Senior Developer</h3>
-                        <div class="company">TRANZACT WILLIS TOWERS WATSON</div>
-                        <div class="job-meta">United States | 2021</div>
-                    </div>
-                    <div class="job-description">
-                        <p><strong>Client: DIRECTV</strong></p>
-                        <ul>
-                            <li>Successfully led the migration of a legacy application to Angular, significantly improving user experience and performance.</li>
-                            <li>Led a team of 3 developers, implementing agile methodologies and development best practices.</li>
-                            <li>Key achievements:
-                                <ul style="margin-top: 10px;">
-                                    <li>Increased OMS system cross-browser compatibility to 99.9%.</li>
-                                    <li>Reduced application load time by 45% through code optimization and lazy loading.</li>
-                                    <li>Implemented a modular and scalable frontend architecture that facilitated future updates.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p style="margin-top: 15px;"><strong>Technologies:</strong> React, Angular 10, Net Framework, Bootstrap 5, Microsoft SQL Server.</p>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Leader - Senior Fullstack Developer</h3>
-                        <div class="company">EUCIM BUSINESS SCHOOL</div>
-                        <div class="job-meta">Lince, Peru | 2019 - 2020</div>
-                    </div>
-                    <div class="job-description">
-                        <p><strong>Master Education and Public Management Landing Pages</strong></p>
-                        <ul>
-                            <li>Developed and implemented an integrated payment system with Stripe, increasing conversion rate by 35%.</li>
-                            <li>Implemented Bitrix24 CRM integration through REST API, automating lead tracking processes.</li>
-                            <li>Optimized performance using Angular service workers, improving load times by 50%.</li>
-                        </ul>
-                        
-                        <p style="margin-top: 20px;"><strong>SRM (Student Relationship Management)</strong></p>
-                        <ul>
-                            <li>Led successful integration with Canvas LMS, enhancing educational experience for over 10,000 students.</li>
-                            <li>Implemented serverless architecture using AWS Lambda, reducing operational costs by 40%.</li>
-                            <li>Designed and implemented an innovative module for bank returns management.</li>
-                        </ul>
-                        <p style="margin-top: 15px;"><strong>Technologies:</strong> Angular, Net Core, Bootstrap, Microsoft SQL Server, AWS, Stripe, Culqi, Niubiz, Services Lambda Amazon, CRM Bitrix24.</p>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Project Leader - Senior Fullstack Developer</h3>
-                        <div class="company">MAPFRE</div>
-                        <div class="job-meta">Miraflores, Peru | 2017 - 2018</div>
-                    </div>
-                    <div class="job-description">
-                        <p><strong>Project: Insurance E-commerce</strong></p>
-                        <ul>
-                            <li>Developed a personal accident insurance sales platform that increased online sales by 200%.</li>
-                            <li>Implemented VISANET integration, ensuring secure transactions and PCI compliance.</li>
-                            <li>Optimized site performance achieving load times under 2 seconds.</li>
-                        </ul>
-                        <p style="margin-top: 15px;"><strong>Technologies:</strong> C# .NET MVC 5, Bootstrap 4 Ajax, Json, Javascript, HTML5, database Oracle 11g</p>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Fullstack Developer</h3>
-                        <div class="company">STEFANINI PERÚ S.A.C</div>
-                        <div class="job-meta">Miraflores, Peru | 2014 - 2016</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Developed and implemented Vehicle Management and Monitoring System with GPS integration</li>
-                            <li>Successfully delivered projects meeting all timeline and quality requirements</li>
-                        </ul>
-                        <p style="margin-top: 15px;"><strong>Technologies:</strong> C# .NET MVC 4, Bootstrap 3 Ajax, Json, Javascript, HTML5, Database INFORMIX and MYSQL, ReportViewer, Web Services WCF, Bitbucket with GIT.</p>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="job-header">
-                        <h3 class="job-title">Full Stack Developer</h3>
-                        <div class="company">MARKOVATIONS S.A.C</div>
-                        <div class="job-meta">San Miguel, Peru | 2011 - 2013</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Developed comprehensive Labor Assistance Control and Access Control software with biometric integration</li>
-                            <li>Implemented solutions using MVC 3 C#, Windows Forms, WPF, and SQL Server</li>
-                            <li>Created user manuals and provided technical documentation for all implementations.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Additional Skills -->
-            <section class="section">
-                <h2>Additional Skills</h2>
-                <ul style="list-style: none; padding: 0;">
-                    <li>✓ Strong problem-solving and analytical abilities</li>
-                    <li>✓ Excellent communication and leadership skills</li>
-                    <li>✓ Proven ability to manage multiple projects simultaneously</li>
-                    <li>✓ Experience in mentoring junior developers</li>
-                    <li>✓ Active participant in tech community and knowledge sharing</li>
-                </ul>
-            </section>
-            
-            <!-- Education -->
-            <section class="section">
-                <h2>Education</h2>
-                <div class="education-grid">
-                    <div class="education-item">
-                        <div class="year">2009 - 2011</div>
-                        <div class="degree">Degree</div>
-                        <div class="institution">IDAT</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="year">2012 - 2015</div>
-                        <div class="degree">Degree</div>
-                        <div class="institution">UTP</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="year">2018 - 2024</div>
-                        <div class="degree">Certifications</div>
-                        <div class="institution">PLATZI</div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Languages & Hobbies -->
-            <div class="info-grid">
+        <div class="main">
+            <!-- Left Column -->
+            <div class="content-left">
+                <!-- Summary -->
                 <section class="section">
-                    <h2>Languages</h2>
-                    <p><strong>Spanish:</strong> Advance</p>
-                    <p><strong>English:</strong> Intermediate - Advance</p>
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="summary">
+                        Senior AI Engineer with 14+ years in software development and hands-on experience building AI-powered production systems. Specialized in applied LLMs, multi-agent architectures, and intelligent automation that delivers measurable business impact. Proven track record deploying AI solutions that reduce operational costs by 40%+ and accelerate delivery cycles. Strong ownership mindset with experience shipping AI systems at scale—from prompt engineering and agent orchestration to production monitoring.
+                    </p>
                 </section>
-                
+
+                <!-- Applied AI Stack -->
                 <section class="section">
-                    <h2>Hobbies</h2>
-                    <div class="hobby-list">
-                        <div class="hobby-item">⚽ Play football</div>
-                        <div class="hobby-item">💪 Do exercise</div>
-                        <div class="hobby-item">🎸 Play the guitar</div>
-                        <div class="hobby-item">🏄 Surf</div>
-                        <div class="hobby-item">🥊 Box</div>
+                    <h2 class="section-title">Applied AI Stack</h2>
+                    <div class="ai-stack">
+                        <div class="ai-stack-item">
+                            <div class="label">LLMs</div>
+                            <div class="value">Claude · GPT-4 · DeepSeek</div>
+                        </div>
+                        <div class="ai-stack-item">
+                            <div class="label">AI Engineering</div>
+                            <div class="value">Claude Code · Copilot</div>
+                        </div>
+                        <div class="ai-stack-item">
+                            <div class="label">Automation</div>
+                            <div class="value">n8n · Langchain</div>
+                        </div>
+                        <div class="ai-stack-item">
+                            <div class="label">Agents</div>
+                            <div class="value">Multi-Agent · Tool-Use</div>
+                        </div>
+                        <div class="ai-stack-item">
+                            <div class="label">LLM Orchestration</div>
+                            <div class="value">RAG · Vector DBs</div>
+                        </div>
+                        <div class="ai-stack-item">
+                            <div class="label">Cloud AI</div>
+                            <div class="value">AWS · Serverless</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Senior AI Engineer & Tech Lead</span>
+                            <span class="job-date">2024 – Present</span>
+                        </div>
+                        <div class="job-company">EUCIM Business School · Lima, Peru</div>
+                        <ul class="job-highlights">
+                            <li>Owned end-to-end AI systems lifecycle, from design and prompt experimentation to production monitoring and optimization</li>
+                            <li>Architected AI-powered email automation using n8n + OpenAI API, processing 2K+ daily messages with intelligent classification—reducing manual triage by 85%</li>
+                            <li>Deployed Claude Code for AI-assisted development, cutting feature delivery time by 35% while maintaining quality standards</li>
+                            <li>Designed serverless AI pipelines on AWS Lambda handling 50K+ daily requests with 99.9% uptime</li>
+                            <li>Led cross-functional team of 5 developers using Scrum, reducing production bugs by 70%</li>
+                        </ul>
+                        <div class="job-tech">n8n · OpenAI API · Claude Code · AWS Lambda · Angular · Node.js · DynamoDB · Niubiz</div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Senior Software Engineer</span>
+                            <span class="job-date">2022 – 2023</span>
+                        </div>
+                        <div class="job-company">TransCore Inc. · USA (Remote)</div>
+                        <ul class="job-highlights">
+                            <li>Led development of MDTA high-integrity toll system ensuring accuracy in transaction processing</li>
+                            <li>Implemented scalable .NET architecture achieving 40% improvement in system performance</li>
+                            <li>Established Git workflows and CI/CD practices reducing deployment time by 60%</li>
+                        </ul>
+                        <div class="job-tech">.NET Core · SQL Server · RESTful APIs · CI/CD · Git</div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Project Leader · Senior Developer</span>
+                            <span class="job-date">2021</span>
+                        </div>
+                        <div class="job-company">TranzAct / Willis Towers Watson · USA (Remote) — Client: DIRECTV</div>
+                        <ul class="job-highlights">
+                            <li>Led Angular migration for OMS platform achieving 99.9% cross-browser compatibility</li>
+                            <li>Reduced application load time by 45% through code optimization and lazy loading</li>
+                            <li>Managed team of 3 developers implementing agile methodologies</li>
+                        </ul>
+                        <div class="job-tech">Angular · React · .NET Framework · SQL Server · Bootstrap</div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Project Leader · Senior Full Stack Developer</span>
+                            <span class="job-date">2019 – 2020</span>
+                        </div>
+                        <div class="job-company">EUCIM Business School · Lima, Peru</div>
+                        <ul class="job-highlights">
+                            <li>Developed integrated payment system with Stripe increasing conversion rate by 35%</li>
+                            <li>Led Canvas LMS integration enhancing educational experience for 10,000+ students</li>
+                            <li>Implemented serverless architecture using AWS Lambda reducing operational costs by 40%</li>
+                        </ul>
+                        <div class="job-tech">Angular · .NET Core · AWS Lambda · Stripe · Culqi · Niubiz · Bitrix24 CRM</div>
+                    </div>
+
+                    <div class="job compact">
+                        <div class="job-header">
+                            <span class="job-title">Project Leader · Senior Full Stack Developer</span>
+                            <span class="job-date">2017 – 2018</span>
+                        </div>
+                        <div class="job-company">MAPFRE · Miraflores, Peru</div>
+                        <ul class="job-highlights">
+                            <li>Built insurance e-commerce platform increasing online sales by 200% with PCI-compliant VISANET integration</li>
+                            <li>Optimized site performance achieving load times under 2 seconds</li>
+                        </ul>
+                        <div class="job-tech">C# .NET MVC 5 · Bootstrap · Oracle 11g · JavaScript</div>
+                    </div>
+
+                    <div class="job compact">
+                        <div class="job-header">
+                            <span class="job-title">Full Stack Developer</span>
+                            <span class="job-date">2014 – 2016</span>
+                        </div>
+                        <div class="job-company">Stefanini Perú S.A.C · Miraflores, Peru</div>
+                        <ul class="job-highlights">
+                            <li>Developed Vehicle Management and Monitoring System with GPS integration</li>
+                        </ul>
+                        <div class="job-tech">C# .NET MVC 4 · INFORMIX · MySQL · Web Services WCF · Git</div>
+                    </div>
+
+                    <div class="job compact">
+                        <div class="job-header">
+                            <span class="job-title">Full Stack Developer</span>
+                            <span class="job-date">2011 – 2013</span>
+                        </div>
+                        <div class="job-company">Markovations S.A.C · San Miguel, Peru</div>
+                        <ul class="job-highlights">
+                            <li>Developed Labor Assistance Control and Access Control software with biometric integration</li>
+                        </ul>
+                        <div class="job-tech">MVC 3 C# · Windows Forms · WPF · SQL Server</div>
                     </div>
                 </section>
             </div>
-        </main>
+
+            <!-- Right Column -->
+            <div class="content-right">
+                <!-- Core Skills -->
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+
+                    <div class="skill-group">
+                        <div class="skill-label">AI & LLMs</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag primary">Prompt Engineering</span>
+                            <span class="skill-tag primary">AI Agents</span>
+                            <span class="skill-tag primary">LLM Orchestration</span>
+                            <span class="skill-tag">RAG Systems</span>
+                            <span class="skill-tag">Tool-Calling</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Agents & Automation</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag primary">n8n</span>
+                            <span class="skill-tag">Multi-Agent</span>
+                            <span class="skill-tag">Workflow Design</span>
+                            <span class="skill-tag">Event-Driven</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Cloud & DevOps</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag primary">AWS</span>
+                            <span class="skill-tag">Lambda</span>
+                            <span class="skill-tag">EC2 · S3</span>
+                            <span class="skill-tag">DynamoDB</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Backend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">.NET Core</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Microservices</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Frontend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">HTML5/CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Databases</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Oracle</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-label">Payments & CRM</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Stripe</span>
+                            <span class="skill-tag">Niubiz</span>
+                            <span class="skill-tag">CULQI</span>
+                            <span class="skill-tag">Bitrix24</span>
+                            <span class="skill-tag">HubSpot</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-degree">Software Engineering</div>
+                        <div class="edu-school">UTP · 2012–2015</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Computing & IT</div>
+                        <div class="edu-school">IDAT · 2009–2011</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Continuous Learning</div>
+                        <div class="edu-school">Platzi · 2018–Present</div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="lang-item">
+                        <span>Spanish</span>
+                        <span>Native</span>
+                    </div>
+                    <div class="lang-item">
+                        <span>English</span>
+                        <span>Professional</span>
+                    </div>
+                </section>
+
+                <!-- Key Strengths -->
+                <section class="section">
+                    <h2 class="section-title">Key Strengths</h2>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ownership</span>
+                        <span class="skill-tag">Tech Leadership</span>
+                        <span class="skill-tag">Remote Work</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Mentoring</span>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 </body>
 </html>
